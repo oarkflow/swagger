@@ -57,58 +57,6 @@ func (config Config) toSwaggerConfig() swaggerConfig {
 	}
 }
 
-// URL presents the url pointing to API definition (normally swagger.json or swagger.yaml).
-func URL(url string) func(*Config) {
-	return func(c *Config) {
-		c.URL = url
-	}
-}
-
-// DocExpansion list, full, none.
-func DocExpansion(docExpansion string) func(*Config) {
-	return func(c *Config) {
-		c.DocExpansion = docExpansion
-	}
-}
-
-// DeepLinking set the swagger deep linking configuration.
-func DeepLinking(deepLinking bool) func(*Config) {
-	return func(c *Config) {
-		c.DeepLinking = deepLinking
-	}
-}
-
-// DefaultModelsExpandDepth set the default expansion depth for models
-// (set to -1 completely hide the models).
-func DefaultModelsExpandDepth(depth int) func(*Config) {
-	return func(c *Config) {
-		c.DefaultModelsExpandDepth = depth
-	}
-}
-
-// InstanceName set the instance name that was used to generate the swagger documents
-// Defaults to swag.Name ("swagger").
-func InstanceName(name string) func(*Config) {
-	return func(c *Config) {
-		c.InstanceName = name
-	}
-}
-
-// PersistAuthorization Persist authorization information over browser close/refresh.
-// Defaults to false.
-func PersistAuthorization(persistAuthorization bool) func(*Config) {
-	return func(c *Config) {
-		c.PersistAuthorization = persistAuthorization
-	}
-}
-
-// Oauth2DefaultClientID set the default client ID used for OAuth2
-func Oauth2DefaultClientID(oauth2DefaultClientID string) func(*Config) {
-	return func(c *Config) {
-		c.Oauth2DefaultClientID = oauth2DefaultClientID
-	}
-}
-
 func defaultConfig() *Config {
 	return &Config{
 		URL:                      "doc.json",
